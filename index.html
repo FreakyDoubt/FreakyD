@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You</title>
+    <meta name="description" content="Pesan cinta spesial untuk tersayang">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Falling Hearts Background -->
+    <div id="falling-hearts" class="falling-hearts"></div>
+
+    <!-- Landing Screen -->
+    <div id="landing-screen" class="screen">
+        <h1 class="title animate-float">Haloo</h1>
+        <button id="continue-btn" class="btn">Klik sekali aja takut bug :D</button>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="screen" style="display: none;">
+        <h1 class="main-title animate-float">I Love You</h1>
+
+        <!-- Image Carousel -->
+        <div class="carousel-container">
+            <div class="carousel-card">
+                <div class="carousel-content">
+                    <img src="love-image.png" alt="Love" class="love-image animate-float" id="carousel-image">
+                    <p class="message" id="carousel-message">"Cantik ❤️"</p>
+                </div>
+            </div>
+            
+            <div class="carousel-buttons">
+                <button class="carousel-btn active" data-index="0">1</button>
+                <button class="carousel-btn" data-index="1">2</button>
+                <button class="carousel-btn" data-index="2">3</button>
+            </div>
+        </div>
+
+        <!-- Name and Date/Time -->
+        <div class="info-section">
+            <h2 class="name">
+                Mel Comel
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+            </h2>
+            <div class="datetime">
+                <p class="date" id="current-date"></p>
+                <p class="time" id="current-time"></p>
+            </div>
+        </div>
+
+        <!-- Message -->
+        <div class="message-box">
+            <h3 class="message-title">Selamat Malam Sayang!</h3>
+            <p class="message-text">
+                i hope you know that i'll always be proud of you, even when you loses, even when you doubts yourself, even when the world doesn't see your effort &lt;3
+            </p>
+        </div>
+
+        <!-- Decorative hearts -->
+        <div class="decorative-hearts animate-float">
+            <span>❤️</span>
+            <span>💕</span>
+            <span>💖</span>
+            <span>💗</span>
+            <span>💝</span>
+        </div>
+    </div>
+<!-- Audio -->
+<audio id="bg-music" src="audio.mp3" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

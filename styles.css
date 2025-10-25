@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 50%, #FF1493 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: white;
+}
+
+/* Falling Hearts */
+.falling-hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.3);
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Screens */
+.screen {
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Landing Screen */
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 9999px;
+    padding: 1.5rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Main Content */
+.main-title {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Carousel */
+.carousel-container {
+    width: 100%;
+    max-width: 42rem;
+    margin-bottom: 4rem;
+}
+
+.carousel-card {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 4px solid rgba(255, 255, 255, 0.4);
+}
+
+.carousel-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.emoji {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.love-image {
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    clip-path: polygon(
+        50% 10%,
+        61% 3%, 72% 1%, 83% 3%, 91% 10%,
+        97% 20%, 100% 32%, 100% 45%,
+        95% 58%, 85% 70%, 70% 82%,
+        50% 100%,
+        30% 82%, 15% 70%, 5% 58%,
+        0% 45%, 0% 32%, 3% 20%,
+        9% 10%, 17% 3%, 28% 1%, 39% 3%
+    );
+    filter: drop-shadow(0 10px 30px rgba(255, 105, 180, 0.5));
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+}
+
+.message {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.carousel-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.carousel-btn {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 9999px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.carousel-btn.active {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+/* Info Section */
+.info-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.heart-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.datetime {
+    margin-top: 1rem;
+}
+
+.date {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.time {
+    font-size: 1.875rem;
+    font-weight: bold;
+}
+
+/* Message Box */
+.message-box {
+    max-width: 42rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    margin-bottom: 4rem;
+}
+
+.message-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.message-text {
+    font-size: 1.25rem;
+    line-height: 1.75;
+    opacity: 0.9;
+}
+
+/* Decorative Hearts */
+.decorative-hearts {
+    display: flex;
+    gap: 1rem;
+    font-size: 3.75rem;
+}
+
+.decorative-hearts span {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    position: relative;
+}
+
+.decorative-hearts span:hover {
+    transform: scale(1.2);
+}
+
+/* Splash Effect */
+@keyframes splash {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+.splash {
+    position: fixed;
+    pointer-events: none;
+    font-size: 3rem;
+    animation: splash 0.6s ease-out forwards;
+    z-index: 9999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    
+    .main-title {
+        font-size: 3.75rem;
+    }
+    
+    .name {
+        font-size: 2rem;
+    }
+    
+    .message-title {
+        font-size: 1.5rem;
+    }
+    
+    .message-text {
+        font-size: 1.125rem;
+    }
+}
+
+/* Fade transitions */
+.fade-in {
+    animation: fadeIn 0.4s ease forwards;
+}
+.fade-out {
+    animation: fadeOut 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.95); }
+}
